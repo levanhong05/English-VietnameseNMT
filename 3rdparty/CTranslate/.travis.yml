@@ -1,0 +1,34 @@
+sudo: false
+language: cpp
+compiler:
+  - gcc
+  - clang
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+      - cmake
+      - cmake-data
+      - libboost-dev
+      - libboost-program-options-dev
+before_install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  - export ROOT_TRAVIS_DIR=$(pwd)
+  - wget http://bitbucket.org/eigen/eigen/get/3.3.2.tar.bz2
+  - tar xf 3.3.2.tar.bz2
+  - mkdir -p ~/lib/
+  - mkdir -p eigen-eigen-da9b4e14c255/build && cd eigen-eigen-da9b4e14c255/build
+  - cmake -DCMAKE_INSTALL_PREFIX=~/lib/ ..
+  - make install
+  - cd ../../ && rm -rf eigen-eigen-da9b4e14c255
+  - cd $ROOT_TRAVIS_DIR
+script:
+  - git submodule update --init
+  - mkdir build && cd build
+  - cmake -DCMAKE_INSTALL_PREFIX=~/lib/ ..
+  - make
+  - make install
