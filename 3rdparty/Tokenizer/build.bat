@@ -1,6 +1,6 @@
 @echo off
 
-echo building log4cpp for windows
+echo building tokenizer for windows
 
 echo setting environment variables;
 
@@ -10,10 +10,10 @@ mkdir build
 
 cd build
 
-cmake -DCMAKE_BUILD_TYPE=Debug ..
+cmake .. -G "Visual Studio 14 2015" -DBUILD_SHARED_LIBS=OFF -DBoost_INCLUDE_DIR=../../boost/build/include/boost-1_64
 
-make
+msbuild /P:Configuration=Debug ALL_BUILD.vcxproj
 
-copy log4cpp\x64\Debug\log4cpp.* ..\..\..\dist\bin\
+copy Debug\OpenNMTTokenizer.* ..\..\..\dist\bin\
 
 exit 0

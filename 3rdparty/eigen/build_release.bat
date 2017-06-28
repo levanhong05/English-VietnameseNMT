@@ -14,6 +14,6 @@ cmake .. -G "Visual Studio 14 2015" -DLIB_ONLY=ON -DBoost_INCLUDE_DIR=../../boos
 
 msbuild /P:Configuration=Release ALL_BUILD.vcxproj
 
-copy Release\OpenNMTTokenizer.* ..\..\..\dist\bin\
+//copy Release\OpenNMTTokenizer.* ..\..\..\dist\bin\
 
 exit 0

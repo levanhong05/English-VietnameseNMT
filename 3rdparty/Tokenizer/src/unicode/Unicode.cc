@@ -161,7 +161,7 @@ namespace onmt
     {
       if (!u)
         return false;
-      return (u >= 9 and u <= 13) or _find_codepoint(u, unidata_Separator);
+      return (u >= 9 && u <= 13) || _find_codepoint(u, unidata_Separator);
     }
 
     bool is_letter(code_point_t u, _type_letter &tl)
@@ -198,7 +198,7 @@ namespace onmt
     {
       if (!u)
         return false;
-      return (u >= 9 and u <= 13) or _find_codepoint(u, unidata_Number);
+      return (u >= 9 && u <= 13) || _find_codepoint(u, unidata_Number);
     }
 
     bool is_mark(code_point_t u)

@@ -130,7 +130,7 @@ namespace onmt
         bool cur_letter = false;
         bool cur_number = false;
 
-        if (v > 32 and v != 0xFEFF)
+        if (v > 32 && v != 0xFEFF)
         {
           cur_letter = unicode::is_letter(v, type_letter);
           cur_number = unicode::is_number(v);

@@ -1,3 +1,5 @@
+CONFIG += c++11
+
 TEMPLATE = aux
 
 CONFIG -= debug_and_release
@@ -37,7 +39,5 @@ CONFIG(release, debug|release){
 }
 
 OTHER_FILES += \
-    build.bat
-
-DISTFILES += \
+    build.bat \
     build_release.bat

@@ -1,6 +1,6 @@
 @echo off
 
-echo building log4cpp for windows
+echo building ctranslate for windows
 
 echo setting environment variables;
 
@@ -10,10 +10,10 @@ mkdir build
 
 cd build
 
-cmake ..
+cmake cmake .. -G "Visual Studio 14 2015"
 
 make
 
-copy log4cpp\x64\Debug\log4cpp.* ..\..\..\dist\bin\
+//copy log4cpp\x64\Debug\log4cpp.* ..\..\..\dist\bin\
 
 exit 0
