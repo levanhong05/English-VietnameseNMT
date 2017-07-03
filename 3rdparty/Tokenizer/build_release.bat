@@ -10,7 +10,11 @@ mkdir build
 
 cd build
 
-cmake .. -G "Visual Studio 14 2015" -DLIB_ONLY=ON -DBoost_INCLUDE_DIR=../../boost/build/include/boost-1_64
+cmake .. -G "Visual Studio 14 2015" -DLIB_ONLY=ON -DBUILD_SHARED_LIBS=OFF -DBoost_INCLUDE_DIR=../../boost/build/include/boost-1_64
+
+msbuild /P:Configuration=Release ALL_BUILD.vcxproj
+
+cmake .. -G "Visual Studio 14 2015" -DLIB_ONLY=ON -DBUILD_SHARED_LIBS=ON -DBoost_INCLUDE_DIR=../../boost/build/include/boost-1_64
 
 msbuild /P:Configuration=Release ALL_BUILD.vcxproj
 

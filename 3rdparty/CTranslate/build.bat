@@ -12,7 +12,7 @@ cd build
 
 cmake cmake .. -G "Visual Studio 14 2015"
 
-make
+msbuild /P:Configuration=Debug ALL_BUILD.vcxproj
 
 //copy log4cpp\x64\Debug\log4cpp.* ..\..\..\dist\bin\
 
